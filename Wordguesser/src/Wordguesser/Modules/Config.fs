@@ -1,3 +1,5 @@
+module Config
+
 let HiddenChar = '*' // Character used for letters not yet guessed
 let CaseSensitive = false; // Should guesses and words be case sensitive. Eg. if the word is "Apple" and the user types "a" should it count as correct. 
 let AllowBlanks = false; // Weather the system should be allowed to pick items with spaces
