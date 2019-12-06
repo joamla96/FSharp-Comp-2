@@ -4,4 +4,4 @@ let AllowBlanks = false; // Weather the system should be allowed to pick items w
 let AllowHelp = false; // Weather the system should allow the use of the "cheat" feature.
 let AllowMultiple = false; // If the user can type in multiple letters. E.g. the word is "apple". The client can type "ap" the result should now be "ap***"
 
-let WordList = []; 
+let WordList = ["Apple", "Banana Pie"]; 
