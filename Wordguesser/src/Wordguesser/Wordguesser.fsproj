@@ -7,6 +7,7 @@
 
   <ItemGroup>
     <Compile Include="Modules\Config.fs" />
+    <Compile Include="Modules\GetRandomWord.fs" />
     <Compile Include="Modules\WordLeft.fs" />
     <Compile Include="Program.fs" />
   </ItemGroup>
