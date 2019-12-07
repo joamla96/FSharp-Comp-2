@@ -13,10 +13,13 @@ let main argv =
 
     while(gameState) do
         let guess = Console.ReadKey().KeyChar;
-        guesses <- Seq.append guesses [Char.ToUpper guess]
-        
-        printfn "" 
-        
-        OutputFormatter.GenerateOutput word guesses
+
+        if (Seq.contains guess guesses) then
+            printfn "You've already guessed on that letter"
+        //elif word is outside the wanted words then
+        else
+            guesses <- Seq.append guesses [Char.ToUpper guess]
+            printfn "" 
+            OutputFormatter.GenerateOutput word guesses
 
     0 // return an integer exit code
