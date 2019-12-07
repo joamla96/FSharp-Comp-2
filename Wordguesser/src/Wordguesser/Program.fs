@@ -16,6 +16,7 @@ let main argv =
 
         if (Seq.contains guess guesses) then
             printfn "You've already guessed on that letter"
+        //elif word is outside the wanted words then
         else
             guesses <- Seq.append guesses [Char.ToUpper guess]
             printfn "" 
