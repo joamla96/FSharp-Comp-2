@@ -5,20 +5,21 @@ open Wordguesser
 
 [<EntryPoint>]
 let main argv =
-    printfn "Hello"
+    printfn "Welcome to Wordgeusser press to start"
 
     let word = GetRandomWord.GetWord
     let mutable guesses = Seq.empty
     let mutable gameState = true
 
     while(gameState) do
-        let guess = Console.ReadKey().KeyChar;
+        let guess = Console.ReadKey().KeyChar |> Char.ToUpper;
 
         if (Seq.contains guess guesses) then
-            printfn "You've already guessed on that letter"
-        //elif word is outside the wanted words then
+            printfn " You've already guessed on that letter"
+        elif not (Seq.contains guess ['A'..'Z']) then
+            printfn " This is not an acceptable guess"
         else
-            guesses <- Seq.append guesses [Char.ToUpper guess]
+            guesses <- Seq.append guesses [guess] 
             printfn "" 
             OutputFormatter.GenerateOutput word guesses
 
