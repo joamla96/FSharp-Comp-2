@@ -8,10 +8,15 @@ let main argv =
     printfn "Hello"
 
     let word = GetRandomWord.GetWord
-    let mutable guesses = seq {'A'; 'B'; 'P'}
+    let mutable guesses = Seq.empty
+    let mutable gameState = true
 
-    guesses <- Seq.append guesses ['E']
-
-    OutputFormatter.GenerateOutput word guesses
+    while(gameState) do
+        let guess = Console.ReadKey().KeyChar;
+        guesses <- Seq.append guesses [Char.ToUpper guess]
+        
+        printfn "" 
+        
+        OutputFormatter.GenerateOutput word guesses
 
     0 // return an integer exit code
