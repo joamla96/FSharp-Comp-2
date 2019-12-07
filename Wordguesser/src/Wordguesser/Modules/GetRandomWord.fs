@@ -2,11 +2,12 @@
 
 module GetRandomWord =
     open System
-
-    let random = System.Random();
+    let random = new System.Random();
 
     let GetWord =
-        let word = Config.WordList.[random.Next(0, Config.WordList.Length-1)]
+        let randInt = random.Next(Config.WordList.Length)
+        let word = Config.WordList.[randInt]
+
         if Config.CaseSensitive then
            word.ToString()
         else
