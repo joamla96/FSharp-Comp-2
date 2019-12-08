@@ -5,7 +5,7 @@ open Wordguesser
 
 [<EntryPoint>]
 let main argv =
-    printfn "Welcome to Wordgeusser press to start"
+    printfn "Welcome to Wordgeusser press a letter to start the game"
 
     let word = GetRandomWord.GetWord
     let mutable guesses = Seq.empty
